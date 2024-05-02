@@ -7,6 +7,7 @@ import linkedin from "../assets/img/about/linkedin.png";
 import file from "../assets/img/about/file.svg";
 import question from "../assets/img/about/question.svg";
 import React from "react";
+import CV_JaeminShim from "../assets/files/CV_JaeminShim.pdf";
 
 const about = [
   {
@@ -58,6 +59,12 @@ const about = [
     text: "Let's set up a meeting!",
   },
 ];
+
+// const showCV = () => {
+
+//   window.open(CV_JaeminShim, "_blank");
+// };
+
 const About = React.forwardRef(({ aboutRef }, ref) => {
   return (
     <div ref={ref} className="max-w-[1240px] mx-auto my-10">
@@ -83,18 +90,34 @@ const About = React.forwardRef(({ aboutRef }, ref) => {
           and data-driven side in my marketing career. */}
         </p>
         <ul className="grid gap-2 justify-center grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 p-4">
-          {about.map((item, index) => (
-            <li
-              key={index}
-              className="p-4 flex gap-4 shadow rounded-md shadow-indigo-500/40"
-            >
-              <img src={item.src} alt={item.alt} className="h-8 mt-2" />
-              <div>
-                <h2 className="font-bold">{item.title}</h2>
-                <p>{item.text}</p>
-              </div>
-            </li>
-          ))}
+          {about.map((item, index) =>
+            item.title == "CV" ? (
+              <a href={CV_JaeminShim} target="_blank" rel="noreferrer">
+                <li
+                  key={index}
+                  className="p-4 flex gap-4 shadow rounded-md shadow-indigo-500/40"
+                >
+                  <img src={item.src} alt={item.alt} className="h-8 mt-2" />
+                  <div>
+                    <h2 className="font-bold">{item.title}</h2>
+
+                    <p>{item.text}</p>
+                  </div>
+                </li>
+              </a>
+            ) : (
+              <li
+                key={index}
+                className="p-4 flex gap-4 shadow rounded-md shadow-indigo-500/40"
+              >
+                <img src={item.src} alt={item.alt} className="h-8 mt-2" />
+                <div>
+                  <h2 className="font-bold">{item.title}</h2>
+                  <p>{item.text}</p>
+                </div>
+              </li>
+            )
+          )}
         </ul>
       </div>
     </div>

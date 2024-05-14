@@ -76,7 +76,7 @@ const skills = [
 
 const Skill = React.forwardRef(({ skillsRef }, ref) => {
   return (
-    <div ref={ref} className="max-w-[1240px] mx-auto">
+    <div ref={ref} className="max-w-[1240px] mx-auto" id="skill">
       <div className="flex items-center gap-2">
         <img src={skill} alt="skill icon" width={60} />
         <h2 className="md:text-2xl sm:text-2lg text-xl font-bold">SKILLS</h2>

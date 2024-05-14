@@ -3,7 +3,7 @@ import projects from "../assets/data/projects";
 
 const Projects = React.forwardRef(({ proejectsRef }, ref) => {
   return (
-    <div ref={ref} className="max-w-[1240px] mx-auto">
+    <div ref={ref} className="max-w-[1240px] mx-auto" id="projects">
       <div className="flex items-center gap-2">
         <img
           src="https://static.thenounproject.com/png/4825734-200.png"

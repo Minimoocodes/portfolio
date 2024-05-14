@@ -67,7 +67,7 @@ const about = [
 
 const About = React.forwardRef(({ aboutRef }, ref) => {
   return (
-    <div ref={ref} className="max-w-[1240px] mx-auto my-10">
+    <div ref={ref} className="max-w-[1240px] mx-auto my-10" id="about">
       <div className="flex items-center gap-2">
         <img
           src="https://icons.veryicon.com/png/o/miscellaneous/member-circle-im/about-12.png"
